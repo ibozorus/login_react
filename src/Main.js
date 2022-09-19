@@ -6,9 +6,9 @@ export default class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email : "",
-            password : "",
-            isValid : false
+            email: "",
+            password: "",
+            isValid: false
 
         }
 
@@ -17,43 +17,41 @@ export default class Main extends React.Component {
         this.handleValidation = this.handleValidation.bind(this);
     }
 
-    handleChange({ target }) {
+    handleChange({target}) {
         const {name, value} = target;
 
-        this.setState(
-            (prevState) => ({
-                ...prevState,
-                [name]: value
+        this.setState({
 
-            })
-        );
-        this.handleValidation();
+                [name]: value
+            }
+        )
+
+        ;
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        if(this.state.isValid){
+        if (this.state.isValid) {
             console.table(this.state);
-        }else{
+        } else {
             console.log("Form not valid");
         }
 
     }
 
     handleValidation() {
-        if(this.state.email === "" || this.state.email == null ){
+        if (this.state.email === "" || this.state.email == null) {
+            console.log('Email False');
             this.setState({
-                isValid : false
+                isValid: false
             });
-        }
-        else if(this.state.password === "" || this.state.password == null ){
+        } else if (this.state.password === "" || this.state.password == null) {
             this.setState({
-                isValid : false
+                isValid: false
             });
-        }
-        else{
+        } else {
             this.setState({
-                isValid : true
+                isValid: true
             });
 
         }
@@ -66,14 +64,19 @@ export default class Main extends React.Component {
                 <form className="row">
                     <div className="form-group col-12 text-center ">
                         <div>
-                            <label htmlFor='email'><input value={this.state.email} onChange={this.handleChange} placeholder="Email" name="email" id="email" type="email"/></label>
+                            <label htmlFor='email'><input value={this.state.email} onBlur={this.handleValidation}
+                                                          onChange={this.handleChange}
+                                                          placeholder="Email" name="email" id="email"
+                                                          type="email"/></label>
                         </div>
                         <div>
-                            <label htmlFor='password'><input value={this.state.password} onChange={this.handleChange} placeholder="Password" name="password" id="password"
+                            <label htmlFor='password'><input value={this.state.password} onBlur={this.handleValidation}
+                                                             onChange={this.handleChange}
+                                                             placeholder="Password" name="password" id="password"
                                                              type="password"/></label>
                         </div>
                         <a>
-                            <button className="btn btn-primary"  onClick={this.handleSubmit}>Sign in</button>
+                            <button className="btn btn-primary" onClick={this.handleSubmit}>Sign in</button>
                         </a>
                     </div>
                 </form>
