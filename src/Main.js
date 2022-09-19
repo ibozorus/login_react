@@ -64,16 +64,20 @@ export default class Main extends React.Component {
                 <form className="row">
                     <div className="form-group col-12 text-center ">
                         <div>
-                            <label htmlFor='email'><input value={this.state.email} onBlur={this.handleValidation}
-                                                          onChange={this.handleChange}
-                                                          placeholder="Email" name="email" id="email"
-                                                          type="email"/></label>
+                            <label htmlFor='email'>
+                                <input value={this.state.email} onBlur={this.handleValidation}
+                                       onChange={this.handleChange}
+                                       placeholder="Email" name="email" id="email"
+                                       type="email"/>
+                            </label>
                         </div>
                         <div>
-                            <label htmlFor='password'><input value={this.state.password} onBlur={this.handleValidation}
-                                                             onChange={this.handleChange}
-                                                             placeholder="Password" name="password" id="password"
-                                                             type="password"/></label>
+                            <label htmlFor='password'>
+                                <input value={this.state.password} onBlur={this.handleValidation}
+                                       onChange={this.handleChange}
+                                       placeholder="Password" name="password" id="password"
+                                       type="password"/>
+                            </label>
                         </div>
                         <a>
                             <button className="btn btn-primary" onClick={this.handleSubmit}>Sign in</button>
