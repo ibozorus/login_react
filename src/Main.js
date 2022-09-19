@@ -6,29 +6,57 @@ export default class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name : "",
-            password : ""
+            email : "",
+            password : "",
+            isValid : false
 
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleValidation = this.handleValidation.bind(this);
     }
 
     handleChange({ target }) {
         const {name, value} = target;
+
         this.setState(
             (prevState) => ({
                 ...prevState,
                 [name]: value
 
             })
-        )
+        );
+        this.handleValidation();
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        console.table(this.state);
+        if(this.state.isValid){
+            console.table(this.state);
+        }else{
+            console.log("Form not valid");
+        }
+
+    }
+
+    handleValidation() {
+        if(this.state.email === "" || this.state.email == null ){
+            this.setState({
+                isValid : false
+            });
+        }
+        else if(this.state.password === "" || this.state.password == null ){
+            this.setState({
+                isValid : false
+            });
+        }
+        else{
+            this.setState({
+                isValid : true
+            });
+
+        }
     }
 
 
@@ -38,7 +66,7 @@ export default class Main extends React.Component {
                 <form className="row">
                     <div className="form-group col-12 text-center ">
                         <div>
-                            <label htmlFor='name'><input value={this.state.name} onChange={this.handleChange} placeholder="Name" name="name" id="name" type="text"/></label>
+                            <label htmlFor='email'><input value={this.state.email} onChange={this.handleChange} placeholder="Email" name="email" id="email" type="email"/></label>
                         </div>
                         <div>
                             <label htmlFor='password'><input value={this.state.password} onChange={this.handleChange} placeholder="Password" name="password" id="password"
