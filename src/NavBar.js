@@ -9,6 +9,7 @@ export default class NavBar extends React.Component {
             <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand" to="/">Home Page</Link>
+                <Link className="navbar-item" to="/journal">Journal</Link>
                 <Link className="btn btn-primary" to="/login"><FontAwesomeIcon icon={faRightToBracket} />Login</Link>
             </nav>
             <Outlet />
