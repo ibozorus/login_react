@@ -1,4 +1,5 @@
 import './banner.css';
+import Foto from './Foto.js';
 
 export default function Journal() {
 
@@ -9,7 +10,7 @@ export default function Journal() {
                 <img className="banner" src="./images/banner.jpg" alt="banner" />
                 <ul>
                     <li>
-                        
+                        <Foto/>
                     </li>
                 </ul>
 

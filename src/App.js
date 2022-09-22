@@ -3,6 +3,7 @@ import NavBar from './NavBar.js';
 import Login from './Login.js';
 import Zort from './Zort.js';
 import Journal from './Journal.js';
+import Foto from './Foto.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
