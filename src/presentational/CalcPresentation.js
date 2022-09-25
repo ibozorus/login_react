@@ -1,5 +1,5 @@
 import "../styles/Calc.css";
-
+import PropTypes from 'prop-types';
 export function CalcPresentation(props) {
 
     return (
@@ -26,5 +26,15 @@ export function CalcPresentation(props) {
             </form>
         </div>
     );
+}
+
+CalcPresentation.propTypes = {
+    plus: PropTypes.func,
+    minus: PropTypes.func,
+    times: PropTypes.func,
+    divide: PropTypes.func,
+    resetInput: PropTypes.func,
+    resetResult: PropTypes.func
+
 }
 
