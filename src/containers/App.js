@@ -1,5 +1,5 @@
 import '../styles/App.css';
-import NavBar from './NavBar.js';
+import NavBarContainer from '../containers/NavBarContainer';
 import Login from './Login.js';
 import Zort from './Zort.js';
 import Journal from './Journal.js';
@@ -10,13 +10,12 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 function App() {
     return (
         <BrowserRouter>
+            <NavBarContainer/>
             <Routes>
-                <Route path="/" element={<NavBar/>}>
-                    <Route index element={<Zort/>}/>
-                    <Route path="login" element={<Login/>}/>
-                    <Route path="journal" element={<Journal/>}/>
-                    <Route path="calc" element={<CalcContainer/>}/>
-                </Route>
+                <Route index element={<Zort/>}/>
+                <Route path="login" element={<Login/>}/>
+                <Route path="journal" element={<Journal/>}/>
+                <Route path="calc" element={<CalcContainer/>}/>
             </Routes>
         </BrowserRouter>
     );
