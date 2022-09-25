@@ -3,8 +3,9 @@ import {
     useRef
 } from "react";
 import "../styles/Calc.css";
+import {CalcPresentation} from "../presentational/CalcPresentation.js"
 
-function Calc() {
+function CalcContainer() {
     const inputRef = useRef(null);
     const resultRef = useRef(null);
     const [result, setResult] = useState(0);
@@ -37,33 +38,18 @@ function Calc() {
     function resetResult(e) {
         e.preventDefault();
         setResult(0);
-        // Add the code for the resetResult function
     };
 
     return (
-        <div className="App">
-            <div>
-                <h1>Simplest Working Calculator</h1>
-            </div>
-            <form>
-                <p ref={resultRef}>
-                    {result}
-                </p>
-                <input
-                    pattern="[0-9]"
-                    ref={inputRef}
-                    type="number"
-                    placeholder="Type a number"
-                />
-                <button onClick={plus}>add</button>
-                <button onClick={minus}>substract</button>
-                <button onClick={times}>multiply</button>
-                <button onClick={divide}>divide</button>
-                <button onClick={resetInput}>reset input</button>
-                <button onClick={resetResult}>reset result</button>
-            </form>
-        </div>
+        <>
+            <CalcPresentation
+                inputRef={inputRef}
+                resultRef={resultRef}
+                result={result}
+                plus={plus} minus={minus} times={times} divide={divide}
+                resetInput={resetInput} resetResult={resetResult}/>
+        </>
     );
 }
 
-export default Calc;
+export default CalcContainer;
