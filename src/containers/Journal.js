@@ -1,4 +1,4 @@
-import './banner.css';
+import '../styles/banner.css';
 import Foto from './Foto.js';
 
 export default function Journal() {

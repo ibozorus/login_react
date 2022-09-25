@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/App.css';
 import NavBar from './NavBar.js';
 import Login from './Login.js';
 import Zort from './Zort.js';

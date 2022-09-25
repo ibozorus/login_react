@@ -2,7 +2,7 @@ import {
     useState,
     useRef
 } from "react";
-import "./Calc.css";
+import "../styles/Calc.css";
 
 function Calc() {
     const inputRef = useRef(null);
