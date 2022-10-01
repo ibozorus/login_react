@@ -1,0 +1,13 @@
+.wrapper{
+    text-align: center;
+    background-color: darkgray;
+}
+
+.section1 {
+    background-color: black;
+    width: 800px;
+    padding: 30px;
+}
+h1, h4 {
+    display: inline-block;
+}

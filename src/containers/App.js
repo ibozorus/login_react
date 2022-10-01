@@ -6,6 +6,7 @@ import Journal from './Journal.js';
 import Foto from './Foto.js';
 import CalcContainer from './CalcContainer.js';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import MatExample from "./MatExample";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="login" element={<Login/>}/>
                 <Route path="journal" element={<Journal/>}/>
                 <Route path="calc" element={<CalcContainer/>}/>
+                <Route path="matexample" element={<MatExample/>}/>
             </Routes>
         </BrowserRouter>
     );

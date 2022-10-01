@@ -1,0 +1,15 @@
+.wrapper {
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #e6e6e6;
+    padding: 40px 25px;
+    margin-top: 50px;
+}
+
+.image {
+    margin: -90px auto 30px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0;
+}
